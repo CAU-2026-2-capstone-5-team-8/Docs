@@ -1,0 +1,9 @@
+flowchart TB
+    pre["읽기 전 진단"] --> reader["독자 수행 관찰"]
+    source["본문의 모델 분석·검토"] --> book["책의 요구 수행·설명 지원"]
+    goal["주제와 학습 목표"] --> match["근거별 적합성 비교"]
+    reader --> match
+    book --> match
+    match --> result["추천 후보·보류 근거"]
+    result -.-> post["자료 읽기·독립 사후평가"]
+    post -.-> evaluation["추천 가설 검증"]
