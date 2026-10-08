@@ -1,0 +1,18 @@
+flowchart LR
+    subgraph client ["사용자 화면"]
+        web["Expo 웹 앱"]
+    end
+    subgraph gateway ["웹 서버"]
+        proxy["Node 웹 프록시"]
+    end
+    subgraph service ["계산과 저장 서비스"]
+        backend["Spring Backend"]
+        ml["Python ML"]
+    end
+    subgraph datastore ["영속 저장"]
+        db[("PostgreSQL")]
+    end
+    web -->|"API 요청"| proxy
+    proxy -->|"인증 전달"| backend
+    backend <-->|"프로필과 추천 계산"| ml
+    backend -->|"응답과 추천 보존"| db

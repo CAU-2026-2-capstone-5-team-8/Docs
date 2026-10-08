@@ -1,0 +1,11 @@
+flowchart LR
+    claim["측정할 수행 주장"] --> evidence["응답에서 볼 증거"]
+    evidence --> task["출제 조건 설계"]
+    task --> draft["문항 후보 생성"]
+    draft --> check["형식과 내용 검사"]
+    check --> review["AI·사람 검토 구분"]
+    review --> split["문항 가족과 용도 고정"]
+    split --> pre["읽기 전 진단 문항"]
+    split --> post["읽기 후 평가 문항"]
+    pre --> input["추천 입력"]
+    post --> outcome["독립 평가 결과"]
